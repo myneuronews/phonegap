@@ -11,6 +11,19 @@
         <title>App Name</title>
     </head>
     <body>
+        <script type="text/javascript">
+$(document).ready(function()
+ {
+   var url="http://yoursite.com/?json=get_recent_posts";
+   $.getJSON(url,function(result){
+    $.each(result.posts, function(i, field){
+       var title=field.title;
+       $("#listview").append("<li><h2>"+title+"<h2></li>");
+    });
+   });
+ });
+</script>
+<ul id="listview"></ul>
         <div id="app">
             <div id="home-page" data-role="page">
                 <div data-role="content" >
